@@ -1,5 +1,5 @@
 /* Basic Style */
-body {
+.page {
   background-color: #f8f8f8;
   color: #333;
   font-family: Lato, sans-serif;
@@ -12,7 +12,7 @@ body {
   text-align: right;
 }
 
-.about img {
+.about__main-block {
   width: 100%;
 }
 
@@ -49,8 +49,7 @@ ul {
   padding: 0px;
 }
 
-li, 
-h3 {
+li {
   list-style: none;
 }
 
@@ -59,7 +58,9 @@ button {
   outline: none;
 }
 
-button {
+.task__add-btn,
+.task__edit-btn,
+.task__delete-btn {
   background: none;
   border: 0px;
   color: #888;
@@ -69,13 +70,14 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.task__add-btn:hover,
+.task__edit-btn:hover,
+.task__delete-btn:hover {
   color: #3a3A3a;
 }
 
 /* Heading */
-h3,
-label[for="new-task"] {
+.task-box__title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -103,17 +105,17 @@ input[type="text"]:focus {
 }
 
 /* New Task */
-label[for="new-task"] {
+.task-box__title:first-of-type {
   display: block;
   margin: 0 0 20px;
 }
 
-input#new-task {
+#new-task {
   width: 318px;
 }
 
 /* Task list */
-li {
+.tasks__item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -123,51 +125,51 @@ li {
   align-items: center;
 }
 
-li > * {
+.tasks__item > * {
   vertical-align: middle;
 }
 
-li > input[type="checkbox"] {
+.tasks__item > .task__checkbox {
   margin: 0 10px;
 }
 
-li > label {
+.task__name {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-li >  input[type="text"] {
+.tasks__item >  .task__name-changed {
   width: 226px;
 }
 
-button.task__delete-btn img {
+.task__delete-btn * {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-button.task__delete-btn img:hover {
+.task__delete-btn *:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-ul#completed-tasks label {
+#completed-tasks .task__name-current {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-ul li input[type=text] {
+.tasks__item .task__name-changed {
   display: none;
 }
 
-.tasks__item_edit input[type=text] {
+.tasks__item_edit .task__name-changed {
   display: inline-block;
   width: 224px;
 }
 
-.tasks__item_edit label {
+.tasks__item_edit .task__name-current {
   display: none;
 }
